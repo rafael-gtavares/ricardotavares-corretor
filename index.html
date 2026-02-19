@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo Tavares | Corretor de Imóveis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho-fixo">
+        <div class="container menu-superior">
+            <a class="logotipo" href="#">
+                <span class="rt-destaque">RT</span> IMÓVEIS
+            </a>
+            <nav>
+                <ul class="links-navegacao">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre Mim</a></li>
+                    <li><a href="#vitrine">Imóveis</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/5521996236303" class="botao-whatsapp-topo" target="_blank">Falar com Ricardo</a>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+        <section id="inicio" class="tela-cheia secao-hero">
+            <div class="mascara-escura"></div>
+            <div class="conteudo-hero">
+                <h1>Onde seus sonhos <br> ganham um endereço.</h1>
+                <p>Consultoria personalizada com quem entende do Rio.</p>
+                <a href="#vitrine" class="botao-principal">Explorar Oportunidades</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="tela-cheia secao-sobre">
+            <div class="container grid-sobre">
+                <div class="area-foto-perfil">
+                    <img src="./imagens/fotoRicardo.png" alt="Ricardo Tavares" class="foto-redonda">
+                </div>
+                <div class="area-texto-sobre">
+                    <span class="subtitulo">Sua confiança é meu foco</span>
+                    <h2>Ricardo Tavares</h2>
+                    <div class="divisor-lateral"></div>
+                    <p class="texto-estilizado">
+                        Com a experiência de quem conhece o valor de um bom investimento, transformo a burocracia do mercado imobiliário em um processo seguro e transparente.
+                        <span>Especialista em unir a história da sua família ao imóvel ideal.</span>
+                    </p>
+                    <p class="creci-destaque">CRECI: 00.000-F</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="vitrine" class="tela-cheia secao-vitrine">
+            <div class="container">
+                <div class="titulo-centralizado">
+                    <h2>Imóveis em Destaque</h2>
+                    <p>As melhores seleções da semana</p>
+                </div>
+                <div id="grade-imoveis" class="grade-imoveis">
+                    </div>
+            </div>
+        </section>
+
+        <section id="contato" class="secao-contato">
+            <div class="container">
+                <div class="cartao-contato">
+                    <div class="contato-info-lateral">
+                        <h3>Fale Comigo</h3>
+                        <p>Dúvidas ou visitas? Estou à disposição no WhatsApp ou e-mail.</p>
+                        <div class="metodo-contato">
+                            <i class="fab fa-whatsapp"></i> (21) 99623-6303
+                        </div>
+                    </div>
+                    <form class="formulario-contato">
+                        <div class="campos-linha">
+                            <input type="text" placeholder="Seu Nome" required>
+                            <input type="email" placeholder="Seu E-mail" required>
+                        </div>
+                        <textarea placeholder="No que posso ajudar?" required></textarea>
+                        <button type="submit" class="botao-enviar">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="janela-detalhes" class="modal-desfoque">
+        <div class="card-modal">
+            <button class="fechar-modal">&times;</button>
+            <div id="conteudo-modal"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
