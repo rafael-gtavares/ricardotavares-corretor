@@ -1,0 +1,96 @@
+.secao-depoimentos {
+    background-color: #f8faff; 
+    padding: 80px 0;
+}
+
+.grade-depoimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card-depoimento {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card-depoimento:hover {
+    transform: translateY(-5px);
+}
+
+.estrelas {
+    color: #ffc107; 
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.card-depoimento p {
+    font-style: italic;
+    color: var(--escuro);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-depoimento cite {
+    font-weight: 700;
+    color: var(--azul);
+    font-style: normal;
+}
+
+@media (max-width: 768px) {
+    .secao-depoimentos {
+        padding: 50px 0;
+        overflow-x: hidden; 
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+
+    .secao-depoimentos .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .titulo-centralizado {
+        text-align: center;
+        padding: 0 20px;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .grade-depoimentos {
+        display: flex;
+        flex-wrap: nowrap; 
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        padding: 10px 20px 30px 20px; 
+        scrollbar-width: none;
+    }
+
+    .grade-depoimentos::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card-depoimento {
+        flex: 0 0 70vw;
+        scroll-snap-align: center;
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        min-height: 150px;
+    }
+
+    .card-depoimento p {
+        font-size: 0.9rem;
+    }
+}

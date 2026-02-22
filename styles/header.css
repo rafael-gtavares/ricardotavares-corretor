@@ -1,0 +1,117 @@
+.cabecalho-fixo {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.menu-superior {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logotipo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    color: var(--escuro);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.rt-destaque {
+    color: var(--azul);
+    margin-right: 3px;
+}
+
+.links-navegacao {
+    display: flex;
+    list-style: none;
+    gap: 3em;
+}
+
+.links-navegacao a {
+    text-decoration: none;
+    color: var(--escuro);
+    font-weight: 600;
+    font-size: 17px;
+    position: relative;
+    padding: 5px 0;
+    transition: 0.3s ease;
+}
+
+.links-navegacao a:hover {
+    color: var(--azul);
+}
+
+.links-navegacao a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--azul);
+    transition: width 0.3s ease;
+}
+
+.links-navegacao a:hover::after {
+    width: 100%;
+    animation: glowBorder 1.5s infinite alternate;
+}
+
+@keyframes glowBorder {
+    from {
+        box-shadow: 0 0 2px var(--azul);
+    }
+    to {
+        box-shadow: 0 0 8px var(--azul);
+        opacity: 0.8;
+    }
+}
+
+.botao-whatsapp-topo {
+    background: var(--azul);
+    color: var(--branco);
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.botao-whatsapp-topo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+}
+
+@media (max-width: 768px) {
+    .cabecalho-fixo {
+        height: 80px;
+    }
+
+    .links-navegacao {
+        display: none; 
+    }
+
+    .menu-superior {
+        justify-content: space-around;
+    }
+
+    .botao-whatsapp-topo {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .logotipo {
+        font-size: 24px;
+    }
+}

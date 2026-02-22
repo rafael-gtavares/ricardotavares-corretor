@@ -25,6 +25,50 @@ const bancoDadosImoveis = [
     }
 ];
 
+const depoimentosDB = [
+    {
+        id: 1,
+        cliente: "Mariana & Carlos",
+        texto: "O Ricardo foi fundamental na escolha do nosso primeiro apartamento. Atendimento impecável e muita transparência.",
+        estrelas: 5
+    },
+    {
+        id: 2,
+        cliente: "João Pedro",
+        texto: "Excelente consultoria. Encontrei o investimento que procurava em tempo recorde.",
+        estrelas: 5
+    },
+    {
+        id: 3,
+        cliente: "Ana Beatriz",
+        texto: "Profissionalismo e ética. Transformou a burocracia em um processo leve.",
+        estrelas: 5
+    },
+    {
+        id: 4,
+        cliente: "Luiz Felipe",
+        texto: "Excelente visão de mercado. O Ricardo não apenas vende um imóvel, ele presta uma consultoria completa sobre o potencial de valorização da região.",
+        estrelas: 5
+    },
+    {
+        id: 5,
+        cliente: "Carla Mendes",
+        texto: "Encontrar um imóvel no Rio exige confiança. O Ricardo passou segurança do início ao fim, cuidando de cada detalhe da documentação com extrema atenção.",
+        estrelas: 5
+    },
+    {
+        id: 6,
+        cliente: "Roberto Silva",
+        texto: "Atendimento diferenciado. Ele realmente ouviu o que minha família precisava e não descansou até encontrar a cobertura perfeita no orçamento que tínhamos.",
+        estrelas: 5
+    }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    carregarVitrine();
+    carregarDepoimentos();
+});
+
 const grade = document.getElementById('grade-imoveis');
 const modal = document.getElementById('janela-detalhes');
 const corpoModal = document.getElementById('conteudo-modal');
@@ -39,6 +83,18 @@ function carregarVitrine() {
                 <p style="font-size: 0.8rem; margin-bottom: 20px;">${imovel.bairro}</p>
                 <button class="botao-saiba-mais" onclick="abrirDetalhes(${imovel.id})">Saiba Mais</button>
             </div>
+        </div>
+    `).join('');
+}
+
+function carregarDepoimentos() {
+    const gradeDepoimentos = document.getElementById('grade-depoimentos');
+    
+    gradeDepoimentos.innerHTML = depoimentosDB.map(d => `
+        <div class="card-depoimento">
+            <div class="estrelas">${'★'.repeat(d.estrelas)}</div>
+            <p>"${d.texto}"</p>
+            <cite>— ${d.cliente}</cite>
         </div>
     `).join('');
 }
@@ -66,5 +122,3 @@ function abrirDetalhes(id) {
 // Fechamento do Modal
 document.querySelector('.fechar-modal').onclick = () => modal.classList.remove('ativo');
 window.onclick = (e) => { if(e.target == modal) modal.classList.remove('ativo'); }
-
-carregarVitrine();

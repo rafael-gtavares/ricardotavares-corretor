@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+:root {
+    --azul: #2563eb;
+    --escuro: #0f172a;
+    --texto: #475569;
+    --branco: #ffffff;
+    --cinza-claro: #f1f5f9;
+
+    --fonte-principal: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Reset Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    color: var(--texto);
+    background-color: var(--branco);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Seções Base */
+.tela-cheia {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 90px 0;
+    overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .tela-cheia {
+        padding: 60px 0;
+        min-height: auto; 
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .tela-cheia {
+        padding: 60px 0;
+        min-height: auto; 
+        height: auto;
+    }
+}
+
+/*IMPORTAÇÃO DOS OUTROS ARQUIVOS CSS*/
+
+@import url('./header.css');
+@import url('./inicio.css');
+@import url('./sobre.css');
+@import url('./depoimentos.css');
+@import url('./vitrine.css');
+@import url('./contato.css');
+@import url('./footer.css');
