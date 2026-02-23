@@ -4,6 +4,11 @@ Esta é uma landing page de alta conversão desenvolvida para o consultor imobil
 
 ---
 
+## 🔗 Link do Projeto
+🚀 **Acesse o site ao vivo:** [Visualizar Deploy](https://rafael-gtavares.github.io/ricardotavares-corretor/) 
+
+---
+
 ## 🚀 Status do Projeto
 O projeto encontra-se atualmente na **Fase 1: Front-end e Interface**.
 
