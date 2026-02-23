@@ -122,3 +122,61 @@ function abrirDetalhes(id) {
 // Fechamento do Modal
 document.querySelector('.fechar-modal').onclick = () => modal.classList.remove('ativo');
 window.onclick = (e) => { if(e.target == modal) modal.classList.remove('ativo'); }
+
+async function exibirNotificacao(mensagem) {
+    const container = document.querySelector('#container-notificacoes');
+    const elemento = document.createElement('div');
+    
+    elemento.classList.add('notificacao');
+    elemento.textContent = mensagem;
+    
+    container.appendChild(elemento);
+
+    setTimeout(() => {
+        elemento.classList.add('fade-out');
+        
+        setTimeout(() => {
+            elemento.remove();
+        }, 1000); 
+    }, 2500);
+}
+
+const formulario = document.getElementById('meu-formulario');
+
+formulario.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const btn = formulario.querySelector('.botao-enviar');
+    const textoOriginal = btn.innerText;
+    
+    btn.innerText = "Enviando...";
+    btn.disabled = true;
+    btn.style.opacity = "0.7";
+
+    const formData = new FormData(this);
+
+    fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            exibirNotificacao("✅ Mensagem enviada com sucesso! Em breve entrarei em contato.");
+            formulario.reset();
+        } else {
+            exibirNotificacao("❌ Ocorreu um erro ao enviar. Tente novamente mais tarde.");
+        }
+    })
+    .catch(error => {
+        exibirNotificacao("❌ Erro de conexão. Verifique sua internet.");
+    })
+    .finally(() => {
+        // Restaura o botão
+        btn.innerText = textoOriginal;
+        btn.disabled = false;
+        btn.style.opacity = "1";
+    });
+});

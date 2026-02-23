@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./styles/footer.css">
 </head>
 <body>
+    <div id="container-notificacoes"></div>
 
     <header class="cabecalho-fixo">
         <div class="container menu-superior">
@@ -96,7 +97,9 @@
                            ricardoaptavares@uol.com.br
                         </div>
                     </div>
-                    <form class="formulario-contato">
+                    <form id="meu-formulario" class="formulario-contato" action="https://formsubmit.co/ricardoaptavares@uol.com.br" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+
                         <div class="campos-linha">
                             <input type="text" placeholder="Seu Nome" required>
                             <input type="email" placeholder="Seu E-mail" required>
